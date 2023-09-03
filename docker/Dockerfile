@@ -4,10 +4,11 @@ FROM python:3.11.4-bookworm
 
 ENV PYTHONUNBUFFERED=1
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 RUN pip install --upgrade pip
-COPY . /usr/src/app/
+COPY . .
+RUN ls
 RUN pip install -r requirements.txt
 
 RUN python manage.py collectstatic --noinput
