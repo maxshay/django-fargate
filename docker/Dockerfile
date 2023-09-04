@@ -16,4 +16,4 @@ RUN python manage.py collectstatic --noinput
 RUN useradd -ms /bin/bash norman
 USER norman
 
-CMD gunicorn insaneblimp.wsgi:application --bind 0.0.0.0:$PORT
+CMD gunicorn config.wsgi:app --bind 0.0.0.0:$PORT
